@@ -24,8 +24,8 @@ jobs:
         rm vnu.zip
     - name: Run Nu Validator
       run: |
-        java -jar vnu.jar --verbose css/ --css
-        java -jar vnu.jar --verbose images/ --svg
+        java -jar vnu.jar --verbose css/ --also-check-css
+        java -jar vnu.jar --verbose images/ --also-check-svg
         
     - name: Setup Python 3.9 for PySpelling
       id: python
