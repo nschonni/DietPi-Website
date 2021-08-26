@@ -19,7 +19,7 @@ jobs:
         check-latest: true
     - name: Download Nu Html Checker
       run: |
-        curl -sSfL https://github.com/validator/validator/releases/download/latest/vnu.jar
+        curl -o vnu.jar https://github.com/validator/validator/releases/download/latest/vnu.jar
     - name: Run Nu Validator
       run: |
         java -jar vnu.jar --verbose css/ --also-check-css
