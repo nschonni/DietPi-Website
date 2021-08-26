@@ -23,7 +23,11 @@ jobs:
         unzip -jo vnu.zip dist/vnu.jar
         rm vnu.zip
     - name: Run Nu Validator
-      run: java -jar vnu.jar --verbose .
+      run: |
+        java -jar vnu.jar --verbose . --skip-non-html
+        java -jar vnu.jar --verbose css/ --css
+        java -jar vnu.jar --verbose images/ --svg
+        
     - name: Setup Python 3.9 for PySpelling
       id: python
       if: always() && steps.deploy.outcome == 'success'
