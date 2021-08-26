@@ -24,7 +24,6 @@ jobs:
         rm vnu.zip
     - name: Run Nu Validator
       run: |
-        java -jar vnu.jar --verbose . --skip-non-html
         java -jar vnu.jar --verbose css/ --css
         java -jar vnu.jar --verbose images/ --svg
         
