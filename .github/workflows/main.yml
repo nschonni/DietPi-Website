@@ -22,7 +22,7 @@ jobs:
         curl -sSfL "$(curl -sSfL https://api.github.com/repos/validator/validator/releases/latest | mawk -F\" '/"browser_download_url.*vnu\.jar.*\.zip"/{print $4;exit}')" -o vnu.zip
         unzip -jo vnu.zip dist/vnu.jar
         rm vnu.zip
-    - name: Run Nu Html Checker to check HTML, CSS and SVG files
+    - name: Run Nu Validator
       run: java -jar vnu.jar --verbose .
     - name: Setup Python 3.9 for PySpelling
       id: python
